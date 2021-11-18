@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Management_St.Migrations
 {
-    public partial class initialdatabase : Migration
+    public partial class initdb : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -14,15 +14,33 @@ namespace Management_St.Migrations
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    CreateTime = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    CreatorId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    UpdateTime = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    UpdaterId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    DeletorId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
+                    CreateTime = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    CreatorId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
+                    UpdateTime = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    UpdaterId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
+                    DeletorId = table.Column<Guid>(type: "uniqueidentifier", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Categories", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "ClassDto",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    CreateTime = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    CreatorId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
+                    UpdateTime = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    UpdaterId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
+                    DeletorId = table.Column<Guid>(type: "uniqueidentifier", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ClassDto", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -32,11 +50,11 @@ namespace Management_St.Migrations
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    CreateTime = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    CreatorId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    UpdateTime = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    UpdaterId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    DeletorId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
+                    CreateTime = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    CreatorId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
+                    UpdateTime = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    UpdaterId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
+                    DeletorId = table.Column<Guid>(type: "uniqueidentifier", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -52,11 +70,11 @@ namespace Management_St.Migrations
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Start_Date = table.Column<DateTime>(type: "datetime2", nullable: false),
                     End_Date = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    CreateTime = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    CreatorId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    UpdateTime = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    UpdaterId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    DeletorId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
+                    CreateTime = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    CreatorId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
+                    UpdateTime = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    UpdaterId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
+                    DeletorId = table.Column<Guid>(type: "uniqueidentifier", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -217,11 +235,11 @@ namespace Management_St.Migrations
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     CourseId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    CreateTime = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    CreatorId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    UpdateTime = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    UpdaterId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    DeletorId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
+                    CreateTime = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    CreatorId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
+                    UpdateTime = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    UpdaterId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
+                    DeletorId = table.Column<Guid>(type: "uniqueidentifier", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -295,7 +313,7 @@ namespace Management_St.Migrations
             migrationBuilder.InsertData(
                 table: "Users",
                 columns: new[] { "Id", "AccessFailedCount", "ClassId", "ConcurrencyStamp", "Email", "EmailConfirmed", "FullName", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { new Guid("0027068e-4c5d-4ecb-a157-b9cc063cd672"), 0, null, "0e722a34-514e-4e6e-a525-972320fe1d14", "huynabhaf190133@fpt.edu.vn", true, "Nguyen Anh Huy", false, null, "huynabhaf190133@fpt.edu.vn", "admin", "AQAAAAEAACcQAAAAENL1bMLl/8XSgdm8dNzneAeOF5m5NpSiEgwNQasoX+4RCfK/0r45ldcXZ8pcYHtYMw==", "0399056507", false, "", false, "admin" });
+                values: new object[] { new Guid("0027068e-4c5d-4ecb-a157-b9cc063cd672"), 0, null, "e6e0f496-abaf-4834-980c-0d3036a64403", "huynabhaf190133@fpt.edu.vn", true, "Nguyen Anh Huy", false, null, "huynabhaf190133@fpt.edu.vn", "admin", "AQAAAAEAACcQAAAAEDjQERoeS7C7UH74BRDzQFF+KZuSa5Nf/1SbV6iNNKNi3LjQUA+YqHragzvdKPs6Ag==", "0399056507", false, "", false, "admin" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_CourseCategories_CourseId",
@@ -325,6 +343,9 @@ namespace Management_St.Migrations
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropTable(
+                name: "ClassDto");
+
             migrationBuilder.DropTable(
                 name: "CourseCategories");
 
