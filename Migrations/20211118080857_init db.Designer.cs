@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Management_St.Migrations
 {
     [DbContext(typeof(ManagementDbContext))]
-    [Migration("20211117121533_initial database")]
-    partial class initialdatabase
+    [Migration("20211118080857_init db")]
+    partial class initdb
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -20,6 +20,38 @@ namespace Management_St.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("ProductVersion", "5.0.12")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+            modelBuilder.Entity("Management_St.Data.Dto.Classes.ClassDto", b =>
+                {
+                    b.Property<Guid?>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime?>("CreateTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid?>("CreatorId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid?>("DeletorId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("UpdateTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid?>("UpdaterId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("ClassDto");
+                });
 
             modelBuilder.Entity("Management_St.Data.Entity.AppRole", b =>
                 {
@@ -106,14 +138,14 @@ namespace Management_St.Migrations
                         {
                             Id = new Guid("0027068e-4c5d-4ecb-a157-b9cc063cd672"),
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "0e722a34-514e-4e6e-a525-972320fe1d14",
+                            ConcurrencyStamp = "e6e0f496-abaf-4834-980c-0d3036a64403",
                             Email = "huynabhaf190133@fpt.edu.vn",
                             EmailConfirmed = true,
                             FullName = "Nguyen Anh Huy",
                             LockoutEnabled = false,
                             NormalizedEmail = "huynabhaf190133@fpt.edu.vn",
                             NormalizedUserName = "admin",
-                            PasswordHash = "AQAAAAEAACcQAAAAENL1bMLl/8XSgdm8dNzneAeOF5m5NpSiEgwNQasoX+4RCfK/0r45ldcXZ8pcYHtYMw==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEDjQERoeS7C7UH74BRDzQFF+KZuSa5Nf/1SbV6iNNKNi3LjQUA+YqHragzvdKPs6Ag==",
                             PhoneNumber = "0399056507",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
@@ -124,17 +156,17 @@ namespace Management_St.Migrations
 
             modelBuilder.Entity("Management_St.Data.Entity.Category", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<Guid?>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<DateTime>("CreateTime")
+                    b.Property<DateTime?>("CreateTime")
                         .HasColumnType("datetime2");
 
-                    b.Property<Guid>("CreatorId")
+                    b.Property<Guid?>("CreatorId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid>("DeletorId")
+                    b.Property<Guid?>("DeletorId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Description")
@@ -143,10 +175,10 @@ namespace Management_St.Migrations
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("UpdateTime")
+                    b.Property<DateTime?>("UpdateTime")
                         .HasColumnType("datetime2");
 
-                    b.Property<Guid>("UpdaterId")
+                    b.Property<Guid?>("UpdaterId")
                         .HasColumnType("uniqueidentifier");
 
                     b.HasKey("Id");
@@ -156,17 +188,17 @@ namespace Management_St.Migrations
 
             modelBuilder.Entity("Management_St.Data.Entity.Class", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<Guid?>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<DateTime>("CreateTime")
+                    b.Property<DateTime?>("CreateTime")
                         .HasColumnType("datetime2");
 
-                    b.Property<Guid>("CreatorId")
+                    b.Property<Guid?>("CreatorId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid>("DeletorId")
+                    b.Property<Guid?>("DeletorId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Description")
@@ -175,10 +207,10 @@ namespace Management_St.Migrations
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("UpdateTime")
+                    b.Property<DateTime?>("UpdateTime")
                         .HasColumnType("datetime2");
 
-                    b.Property<Guid>("UpdaterId")
+                    b.Property<Guid?>("UpdaterId")
                         .HasColumnType("uniqueidentifier");
 
                     b.HasKey("Id");
@@ -188,17 +220,17 @@ namespace Management_St.Migrations
 
             modelBuilder.Entity("Management_St.Data.Entity.Course", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<Guid?>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<DateTime>("CreateTime")
+                    b.Property<DateTime?>("CreateTime")
                         .HasColumnType("datetime2");
 
-                    b.Property<Guid>("CreatorId")
+                    b.Property<Guid?>("CreatorId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid>("DeletorId")
+                    b.Property<Guid?>("DeletorId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Description")
@@ -213,10 +245,10 @@ namespace Management_St.Migrations
                     b.Property<DateTime>("Start_Date")
                         .HasColumnType("datetime2");
 
-                    b.Property<DateTime>("UpdateTime")
+                    b.Property<DateTime?>("UpdateTime")
                         .HasColumnType("datetime2");
 
-                    b.Property<Guid>("UpdaterId")
+                    b.Property<Guid?>("UpdaterId")
                         .HasColumnType("uniqueidentifier");
 
                     b.HasKey("Id");
@@ -256,20 +288,20 @@ namespace Management_St.Migrations
 
             modelBuilder.Entity("Management_St.Data.Entity.Topic", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<Guid?>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<Guid>("CourseId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<DateTime>("CreateTime")
+                    b.Property<DateTime?>("CreateTime")
                         .HasColumnType("datetime2");
 
-                    b.Property<Guid>("CreatorId")
+                    b.Property<Guid?>("CreatorId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid>("DeletorId")
+                    b.Property<Guid?>("DeletorId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Description")
@@ -278,10 +310,10 @@ namespace Management_St.Migrations
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("UpdateTime")
+                    b.Property<DateTime?>("UpdateTime")
                         .HasColumnType("datetime2");
 
-                    b.Property<Guid>("UpdaterId")
+                    b.Property<Guid?>("UpdaterId")
                         .HasColumnType("uniqueidentifier");
 
                     b.HasKey("Id");
