@@ -32,6 +32,7 @@ namespace Management_St
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            services.AddCors();
             services.AddDbContext<ManagementDbContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("Default")));
             services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<ManagementDbContext>().AddDefaultTokenProviders();
@@ -113,7 +114,7 @@ namespace Management_St
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllers();
+                endpoints.MapDefaultControllerRoute();
             });
         }
     }

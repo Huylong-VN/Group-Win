@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Management_St.Data.Dto.Classes;
 
 namespace Management_St.Data.DbContext
 {
@@ -15,6 +16,8 @@ namespace Management_St.Data.DbContext
         {
         }
 
+        public DbSet<Class> Classes { set; get; }
+
         protected override void OnModelCreating(ModelBuilder builder)
         {
             builder.Entity<Class>(x =>
@@ -22,17 +25,20 @@ namespace Management_St.Data.DbContext
                 x.ToTable("Classes");
                 x.HasKey(x => x.Id);
             });
+            // Topic of Dat
             builder.Entity<Topic>(x =>
             {
                 x.ToTable("Topics");
                 x.HasKey(x => x.Id);
                 x.HasOne(x => x.Course).WithMany(x => x.Topics).HasForeignKey(x => x.CourseId);
             });
+            // Category of Minh
             builder.Entity<Category>(x =>
             {
                 x.ToTable("Categories");
                 x.HasKey(x => x.Id);
             });
+            // Course of Lap
             builder.Entity<Course>(x =>
             {
                 x.ToTable("Courses");
@@ -80,5 +86,7 @@ namespace Management_St.Data.DbContext
             //IdentityUserToken
             builder.Entity<IdentityUserToken<Guid>>().HasKey(x => x.UserId);
         }
+
+        public DbSet<Management_St.Data.Dto.Classes.ClassDto> ClassDto { get; set; }
     }
 }
