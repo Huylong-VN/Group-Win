@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Management_St.Data.Dto.Classes;
+using Management_St.Data.Dto.Categories;
 
 namespace Management_St.Data.DbContext
 {
@@ -17,6 +18,7 @@ namespace Management_St.Data.DbContext
         }
 
         public DbSet<Class> Classes { set; get; }
+        public DbSet<Category> Categories { set; get; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
@@ -88,5 +90,7 @@ namespace Management_St.Data.DbContext
         }
 
         public DbSet<Management_St.Data.Dto.Classes.ClassDto> ClassDto { get; set; }
+
+        public DbSet<Management_St.Data.Dto.Categories.CategoryDto> CategoryDto { get; set; }
     }
 }
