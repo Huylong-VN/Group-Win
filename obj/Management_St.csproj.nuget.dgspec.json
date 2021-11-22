@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\BTEC\\ad\\asm2 db\\Group-Win\\Management_St.csproj": {}
+    "C:\\Users\\huylo\\Documents\\CÔ loan\\Group\\Management_St\\Management_St.csproj": {}
   },
   "projects": {
-    "D:\\BTEC\\ad\\asm2 db\\Group-Win\\Management_St.csproj": {
+    "C:\\Users\\huylo\\Documents\\CÔ loan\\Group\\Management_St\\Management_St.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\BTEC\\ad\\asm2 db\\Group-Win\\Management_St.csproj",
+        "projectUniqueName": "C:\\Users\\huylo\\Documents\\CÔ loan\\Group\\Management_St\\Management_St.csproj",
         "projectName": "Management_St",
-        "projectPath": "D:\\BTEC\\ad\\asm2 db\\Group-Win\\Management_St.csproj",
-        "packagesPath": "C:\\Users\\mason\\.nuget\\packages\\",
-        "outputPath": "D:\\BTEC\\ad\\asm2 db\\Group-Win\\obj\\",
+        "projectPath": "C:\\Users\\huylo\\Documents\\CÔ loan\\Group\\Management_St\\Management_St.csproj",
+        "packagesPath": "C:\\Users\\huylo\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\huylo\\Documents\\CÔ loan\\Group\\Management_St\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\mason\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\huylo\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -70,10 +70,6 @@
               "target": "Package",
               "version": "[5.0.12, )"
             },
-            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
-              "target": "Package",
-              "version": "[5.0.2, )"
-            },
             "Swashbuckle.AspNetCore.Swagger": {
               "target": "Package",
               "version": "[6.2.3, )"
@@ -105,7 +101,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     }
