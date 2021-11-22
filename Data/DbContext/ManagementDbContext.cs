@@ -7,6 +7,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Management_St.Data.Dto.Classes;
+using Management_St.Data.Dto.Topics;
+using Management_St.Data.Dto.Courses;
 
 namespace Management_St.Data.DbContext
 {
@@ -17,6 +19,9 @@ namespace Management_St.Data.DbContext
         }
 
         public DbSet<Class> Classes { set; get; }
+        public DbSet<Topic> Topics { set; get; }
+        public DbSet<Course> Courses { set; get; }
+
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
@@ -88,5 +93,9 @@ namespace Management_St.Data.DbContext
         }
 
         public DbSet<Management_St.Data.Dto.Classes.ClassDto> ClassDto { get; set; }
+
+        public DbSet<Management_St.Data.Dto.Topics.TopicDto> TopicDto { get; set; }
+
+        public DbSet<Management_St.Data.Dto.Courses.CourseDto> CourseDto { get; set; }
     }
 }
